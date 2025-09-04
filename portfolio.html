@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASHANDEEP Singh - Batman Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0c0c0c;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 28, 28, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(28, 28, 28, 0.6) 0%, transparent 20%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            padding: 30px 0;
+            position: relative;
+            border-bottom: 1px solid #333;
+            background: rgba(20, 20, 20, 0.9);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .bat-logo {
+            width: 60px;
+            height: 60px;
+            background-color: #ffcc00;
+            clip-path: polygon(50% 0%, 100% 100%, 50% 70%, 0 100%);
+            margin-right: 15px;
+            position: relative;
+            box-shadow: 0 0 15px #ffcc00;
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffcc00;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 70% 20%, rgba(255, 204, 0, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 30% 80%, rgba(255, 204, 0, 0.1) 0%, transparent 30%);
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #aaa;
+        }
+        
+        .hero-img {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 5px solid #ffcc00;
+            border-radius: 50%;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 25px #ffcc00;
+        }
+        
+        .hero-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, transparent 30%, #0c0c0c 70%),
+                repeating-conic-gradient(from 0deg, #0c0c0c 0deg 10deg, #ffcc00 10deg 20deg);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: rgba(15, 15, 15, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #ffcc00;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ffcc00;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        
+        .bat-symbol {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .bat-symbol-shape {
+            width: 250px;
+            height: 250px;
+            background-color: #ffcc00;
+            clip-path: polygon(50% 0%, 100% 100%, 50% 70%, 0 100%);
+            box-shadow: 0 0 30px #ffcc00;
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 30px #ffcc00; }
+            50% { box-shadow: 0 0 50px #ffcc00; }
+            100% { box-shadow: 0 0 30px #ffcc00; }
+        }
+        
+        /* Skills Section */
+        .skills {
+            padding: 80px 0;
+        }
+        
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .skill {
+            width: 200px;
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
+        }
+        
+        .skill-icon {
+            font-size: 40px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        
+        .skill h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        
+        .skill p {
+            color: #bbb;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: rgba(15, 15, 15, 0.7);
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(40, 40, 40, 0.8);
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ffcc00;
+            color: #0c0c0c;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            background: #ffd633;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            background: rgba(10, 10, 10, 0.9);
+            border-top: 1px solid #333;
+        }
+        
+        .footer-text {
+            color: #bbb;
+            font-size: 16px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .skill {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="bat-logo"></div>
+                    <div class="logo-text">JASHANDEEP</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-img"></div>
+            <h1>JASHANDEEP Singh</h1>
+            <p>Darkness is my canvas, and code is my weapon. I am the developer this city needs.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Hero Gotham Deserves</h3>
+                    <p>I am a dedicated developer with a passion for creating solutions that make a difference. Like the Dark Knight, I work best in the shadows, crafting elegant code to solve complex problems.</p>
+                    <p>With a strong sense of justice and a commitment to excellence, I pursue every project with intensity and precision. I believe in clean code, thorough testing, and continuous learning.</p>
+                    <p>When I'm not saving Gotham from digital chaos, I enjoy exploring new technologies, contributing to open source projects, and mentoring aspiring developers.</p>
+                    <p>I operate by a strict moral code and believe that technology should be used to empower people and create a better world for everyone.</p>
+                    <p>My mission is to use my skills to fight the crime of poorly designed software and bring justice to users everywhere.</p>
+                </div>
+                <div class="bat-symbol">
+                    <div class="bat-symbol-shape"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="skill-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and accessible websites using modern technologies.</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">🦇</div>
+                    <h3>Stealth Operations</h3>
+                    <p>Working discreetly on projects that require the utmost secrecy and precision.</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">🔍</div>
+                    <h3>Problem Solving</h3>
+                    <p>Analyzing complex problems and developing efficient solutions.</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Fast Execution</h3>
+                    <p>Completing projects quickly without compromising on quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="What would you like to say?"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2023 JASHANDEEP Singh. This city needs me.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
